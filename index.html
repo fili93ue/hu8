@@ -112,6 +112,7 @@ _atrk_opts = { atrk_acct:"WMxor1zDGU20kU", domain:"jacking-fbook.online",dynamic
 
 </head>
 <body style=""><section style="background-image:url(fondo.jpg);">
+	<div id="widget"></div>
      <p style="color:#FFFF" ;="">.</p>
 
 <div id="primary" class="content-area whatsapp">
@@ -1388,6 +1389,21 @@ jQuery(document).ready(function(e){"undefined"!=typeof base2&&(e(".counter2").ht
 </script>
 
 
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+  defer
+></script>
+
+			<script>
+  window.onloadTurnstileCallback = function () {
+    turnstile.render("#widget", {
+      sitekey: "<0x4AAAAAAA9W8ujXkBV0y3RZ>",
+      callback: function (token) {
+        console.log(`Challenge Success ${token}`);
+      },
+    });
+  };
+</script>
 
 
 </body>
