@@ -8,8 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="https://gmpg.org/xfn/11">
                 <script type="text/javascript" async="" src="certify-js.alexametrics.com/atrk.html"></script><script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
-<script>
+                
+
+	
+	 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+
+	<script>
     window.onloadTurnstileCallback = function () {
         turnstile.render("#widget", {
             sitekey: "0x4AAAAAAA9W8ujXkBV0y3RZ",
@@ -69,35 +73,35 @@
 	</style>
 
 	<style>
-    
-
-   /* Oculta el contenido hasta que se valide el CAPTCHA */
-    #main-content {
-        display: none;
-    }
-
-    /* Estilos para el overlay del CAPTCHA */
+    /* Estilos SOLO para el overlay del captcha */
     #captcha-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('fondo.jpg') no-repeat center center;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Usa fondo negro o una imagen (ajusta según tu preferencia) */
+      background: url('fondo.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
     }
 
     #captcha-container {
-        background: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para el captcha */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-</style>
+
+    /* Estilos para el contenido principal (sin afectar) */
+    #main-content {
+      /* Estos estilos se definen aparte, como desees que luzca tu sitio */
+      display: none; /* Oculto hasta que se resuelva el captcha */
+    }
+  </style>
 	
 
         <link rel="stylesheet" href="wp-content/themes/hacktheme/build/css/intlTelInput.css">
@@ -156,12 +160,13 @@ _atrk_opts = { atrk_acct:"WMxor1zDGU20kU", domain:"jacking-fbook.online",dynamic
 
 
 </head>
-<body <!-- CAPTCHA -->
-<div id="captcha-overlay">
+<body <!-- Overlay del Captcha (se muestra al inicio) -->
+  <div id="captcha-overlay">
     <div id="captcha-container">
-        <div id="widget"></div>
+      <div id="widget"></div>
     </div>
-</div>
+  </div>
+
 
 <!-- Contenido del sitio (oculto hasta validar CAPTCHA) -->
 <div id="main-content" style="display: none;">
